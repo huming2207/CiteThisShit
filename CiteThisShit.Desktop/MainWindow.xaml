@@ -1,0 +1,21 @@
+﻿<Window x:Class="CiteThisShit.Desktop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CiteThisShit.Desktop"
+        mc:Ignorable="d"
+        Title="Project ``CiteThisShit`` for Windows Desktop" Height="331.6" Width="848.2">
+    <Grid>
+        <TextBox x:Name="searchTextbox" HorizontalAlignment="Left" Height="36" Margin="90,30,0,0" TextWrapping="Wrap" Text="Enter DOI, ISBN or Keyword" VerticalAlignment="Top" Width="286" FontSize="20"/>
+        <RadioButton Content="DOI" HorizontalAlignment="Left" Margin="114,78,0,0" VerticalAlignment="Top" FontSize="15"/>
+        <RadioButton Content="ISBN" HorizontalAlignment="Left" Margin="196,78,0,0" VerticalAlignment="Top" FontSize="15"/>
+        <RadioButton Content="Book Title" HorizontalAlignment="Left" Margin="281,78,0,0" VerticalAlignment="Top" FontSize="15" RenderTransformOrigin="0.271,0.875"/>
+        <Button x:Name="searchButton" Content="💩" HorizontalAlignment="Left" Height="36" Margin="381,29,0,0" VerticalAlignment="Top" Width="61" FontSize="20" Click="searchButton_Click"/>
+        <GroupBox Header="Additional Information" HorizontalAlignment="Left" Height="157" Margin="90,114,0,0" VerticalAlignment="Top" Width="352">
+            <Grid HorizontalAlignment="Left" Height="139" Margin="-6,2,-6.8,-6.6" VerticalAlignment="Top" Width="352"/>
+        </GroupBox>
+        <TextBox x:Name="resultTextbox" HorizontalAlignment="Left" Height="242" Margin="494,29,0,0" TextWrapping="Wrap" Text="Result shows here..." VerticalAlignment="Top" Width="320"/>
+
+    </Grid>
+</Window>
