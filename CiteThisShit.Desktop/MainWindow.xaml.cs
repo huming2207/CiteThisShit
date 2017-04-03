@@ -29,10 +29,10 @@ namespace CiteThisShit.Desktop
 
         private async void searchButton_Click(object sender, RoutedEventArgs e)
         {
-            var searchControl = new QueryControl();
-            var searchResult = await searchControl.QueryDoiResult(searchTextbox.Text);
+            var referenceGenerator = new ReferencingStringGenerator();
+            string referenceString = await referenceGenerator.GenerateDoiString(searchTextbox.Text);
 
-            resultTextbox.AppendText("\n\n" + searchResult.Message.Author[0].Given + " " + searchResult.Message.Author[0].Family);
+            resultTextbox.AppendText(string.Format("\n\n{0}", referenceString));
         }
     }
 }
