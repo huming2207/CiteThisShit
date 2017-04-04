@@ -28,29 +28,7 @@ namespace CiteThisShit.NetStandard
             string jsonStr = await client.GetStringAsync(queryPath);
             client.Dispose();
 
-            var jsonSettings = new JsonSerializerSettings()
-            {
-                NullValueHandling = NullValueHandling.Ignore
-            };
-
-            var jsonObject = JsonConvert.DeserializeObject<T>(jsonStr, jsonSettings);
-            return jsonObject;
-        }
-
-        private async Task<T> _GetOpenLibraryDataAsync<T>(string baseUrl, string queryPath)
-        {
-            var client = _HttpClient(baseUrl);
-            string jsonStr = await client.GetStringAsync(queryPath);
-            client.Dispose();
-
-            jsonStr.Split
-
-            var jsonSettings = new JsonSerializerSettings()
-            {
-                NullValueHandling = NullValueHandling.Ignore
-            };
-
-            var jsonObject = JsonConvert.DeserializeObject<T>(jsonStr, jsonSettings);
+            var jsonObject = JsonConvert.DeserializeObject<T>(jsonStr);
             return jsonObject;
         }
 
@@ -74,7 +52,8 @@ namespace CiteThisShit.NetStandard
         public async Task<OpenLibraryResult> QueryOpenLibraryIsbnResult(string isbnString)
         {
             string queryPath = string.Format("/api/books?bibkeys=ISBN:{0}&jscmd=details&format=json", isbnString);
-            return await _GetOpenLibraryDataAsync<OpenLibraryResult>("https://openlibrary.org", queryPath);
+            var result = await _GetDataAsync<Dictionary<string, OpenLibraryResult>>("https://openlibrary.org", queryPath);
+            return result["ISBN:" + isbnString];
         }
     }
 }

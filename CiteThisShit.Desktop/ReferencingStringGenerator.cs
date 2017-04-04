@@ -137,7 +137,7 @@ namespace CiteThisShit.Desktop
             doiParagraph.Inlines.Add(new Run(string.Format("{0}, ", queryResult.Details.Publishers[0])));
 
             // Publish Location
-            doiParagraph.Inlines.Add(new Run(string.Format("{0}, ", queryResult.Details.PublishPlaces[0].Split(',')[1])));
+            doiParagraph.Inlines.Add(new Run(string.Format("{0}", queryResult.Details.PublishPlaces[0].Split(',')[1])));
 
             return doiParagraph;
         }
