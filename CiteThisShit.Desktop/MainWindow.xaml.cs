@@ -29,10 +29,23 @@ namespace CiteThisShit.Desktop
 
         private async void searchButton_Click(object sender, RoutedEventArgs e)
         {
-            var referenceGenerator = new ReferencingStringGenerator();
-            string referenceString = await referenceGenerator.GenerateDoiString(searchTextbox.Text);
+            if(searchDoiRadioButton.IsChecked.HasValue || searchIsbnRadioButton.IsChecked.HasValue)
+            {
+                if(searchDoiRadioButton.IsChecked.Value)
+                {
+                    var referenceGenerator = new ReferencingStringGenerator();
+                    var referenceParagraph = await referenceGenerator.GenerateDoiString(searchTextbox.Text);
 
-            resultTextbox.AppendText(string.Format("\n\n{0}", referenceString));
+                    resultTextbox.Document.Blocks.Add(referenceParagraph);
+                }
+                else
+                {
+                    var referenceGenerator = new ReferencingStringGenerator();
+                    var referenceParagraph = await referenceGenerator.GenerateIsbnString(searchTextbox.Text);
+
+                    resultTextbox.Document.Blocks.Add(referenceParagraph);
+                }
+            }
         }
     }
 }

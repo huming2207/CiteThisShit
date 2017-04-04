@@ -5,17 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CiteThisShit.Desktop"
         mc:Ignorable="d"
-        Title="Project ``CiteThisShit`` for Windows Desktop" Height="331.6" Width="848.2">
+        Title="CiteThisShit for Windows Desktop" Height="331.6" Width="848.2">
     <Grid>
-        <TextBox x:Name="searchTextbox" HorizontalAlignment="Left" Height="36" Margin="90,30,0,0" TextWrapping="Wrap" Text="Enter DOI, ISBN or Keyword" VerticalAlignment="Top" Width="286" FontSize="20"/>
-        <RadioButton Content="DOI" HorizontalAlignment="Left" Margin="114,78,0,0" VerticalAlignment="Top" FontSize="15"/>
-        <RadioButton Content="ISBN" HorizontalAlignment="Left" Margin="196,78,0,0" VerticalAlignment="Top" FontSize="15"/>
-        <RadioButton Content="Book Title" HorizontalAlignment="Left" Margin="281,78,0,0" VerticalAlignment="Top" FontSize="15" RenderTransformOrigin="0.271,0.875"/>
-        <Button x:Name="searchButton" Content="💩" HorizontalAlignment="Left" Height="36" Margin="381,29,0,0" VerticalAlignment="Top" Width="61" FontSize="20" Click="searchButton_Click"/>
-        <GroupBox Header="Additional Information" HorizontalAlignment="Left" Height="157" Margin="90,114,0,0" VerticalAlignment="Top" Width="352">
+        <TextBox x:Name="searchTextbox" HorizontalAlignment="Left" Height="36" Margin="32,28,0,0" TextWrapping="Wrap" Text="Enter DOI, ISBN or Keyword" VerticalAlignment="Top" Width="286" FontSize="20"/>
+        <RadioButton x:Name="searchDoiRadioButton" Content="DOI" HorizontalAlignment="Left" Margin="94,80,0,0" VerticalAlignment="Top" FontSize="15"/>
+        <RadioButton x:Name="searchIsbnRadioButton" Content="ISBN" HorizontalAlignment="Left" Margin="220,80,0,0" VerticalAlignment="Top" FontSize="15"/>
+        <Button x:Name="searchButton" Content="Go" HorizontalAlignment="Left" Height="36" Margin="323,27,0,0" VerticalAlignment="Top" Width="61" FontSize="15" Click="searchButton_Click"/>
+        <GroupBox Header="Additional Information" HorizontalAlignment="Left" Height="157" Margin="32,112,0,0" VerticalAlignment="Top" Width="352">
             <Grid HorizontalAlignment="Left" Height="139" Margin="-6,2,-6.8,-6.6" VerticalAlignment="Top" Width="352"/>
         </GroupBox>
-        <TextBox x:Name="resultTextbox" HorizontalAlignment="Left" Height="242" Margin="494,29,0,0" TextWrapping="Wrap" Text="Result shows here..." VerticalAlignment="Top" Width="320"/>
+        <RichTextBox x:Name="resultTextbox" HorizontalAlignment="Left" Height="242" Margin="401,27,0,0" VerticalAlignment="Top" Width="432">
+            <FlowDocument>
+                <Paragraph FontWeight="DemiBold" FontFamily="Calibri" FontSize="15" Foreground="Gray">
+                    <Run Text="Result shows here, with formatted rich text..."/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
 
     </Grid>
 </Window>

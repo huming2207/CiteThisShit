@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using CiteThisShit.Data.Doi;
-using CiteThisShit.Data.Book;
+using CiteThisShit.Data.GoogleBook;
+using CiteThisShit.Data.OpenLibrary;
 
 namespace CiteThisShit.NetStandard
 {
@@ -36,21 +37,44 @@ namespace CiteThisShit.NetStandard
             return jsonObject;
         }
 
+        private async Task<T> _GetOpenLibraryDataAsync<T>(string baseUrl, string queryPath)
+        {
+            var client = _HttpClient(baseUrl);
+            string jsonStr = await client.GetStringAsync(queryPath);
+            client.Dispose();
+
+            jsonStr.Split
+
+            var jsonSettings = new JsonSerializerSettings()
+            {
+                NullValueHandling = NullValueHandling.Ignore
+            };
+
+            var jsonObject = JsonConvert.DeserializeObject<T>(jsonStr, jsonSettings);
+            return jsonObject;
+        }
+
         public async Task<DoiResult> QueryDoiResult(string doiString)
         {
             return await _GetDataAsync<DoiResult>("http://api.crossref.org", string.Format("/works/{0}", doiString));
         }
 
-        public async Task<BookResult> QueryIsbnResult(string isbnString)
+        public async Task<GoogleBookResult> QueryGoogleIsbnResult(string isbnString)
         {
             string queryPath = string.Format("/books/v1/volumes?q=isbn:{0}", isbnString);
-            return await _GetDataAsync<BookResult>("https://www.googleapis.com", queryPath);
+            return await _GetDataAsync<GoogleBookResult>("https://www.googleapis.com", queryPath);
         }
 
-        public async Task<BookResult> QueryTitleResult(string titleKeywordString)
+        public async Task<GoogleBookResult> QueryGoogleTitleResult(string titleKeywordString)
         {
             string queryPath = string.Format("/books/v1/volumes?q=intitle:{0}", Uri.EscapeDataString(titleKeywordString));
-            return await _GetDataAsync<BookResult>("https://www.googleapis.com", queryPath);
+            return await _GetDataAsync<GoogleBookResult>("https://www.googleapis.com", queryPath);
+        }
+
+        public async Task<OpenLibraryResult> QueryOpenLibraryIsbnResult(string isbnString)
+        {
+            string queryPath = string.Format("/api/books?bibkeys=ISBN:{0}&jscmd=details&format=json", isbnString);
+            return await _GetOpenLibraryDataAsync<OpenLibraryResult>("https://openlibrary.org", queryPath);
         }
     }
 }

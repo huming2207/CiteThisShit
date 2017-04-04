@@ -9,7 +9,8 @@
     <Import_RootNamespace>CiteThisShit.Data</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Book\BookResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GoogleBook\GoogleBookResult.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Doi\DoiResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OpenLibrary\OpenLibraryResult.cs" />
   </ItemGroup>
 </Project>
