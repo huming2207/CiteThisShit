@@ -14,7 +14,7 @@ EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		CiteThisShit.Data\CiteThisShit.Data.projitems*{03cef9ab-b0ce-46d1-b1c3-55115a153c39}*SharedItemsImports = 4
-		CiteThisShit.Data\CiteThisShit.Data.projitems*{cb814c76-ba78-4f99-827c-941842fca652}*SharedItemsImports = 13
+		CiteThisShit.Data\CiteThisShit.Data.projitems*{1baffa03-ca42-4c1c-b3d8-564f6536bf09}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

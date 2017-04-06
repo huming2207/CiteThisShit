@@ -5,14 +5,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
-    <PackageReference Include="System.Net.Http" Version="4.3.1" />
+    <Compile Remove="Doi\**" />
+    <Compile Remove="GoogleBook\**" />
+    <Compile Remove="OpenLibrary\**" />
+    <EmbeddedResource Remove="Doi\**" />
+    <EmbeddedResource Remove="GoogleBook\**" />
+    <EmbeddedResource Remove="OpenLibrary\**" />
+    <None Remove="Doi\**" />
+    <None Remove="GoogleBook\**" />
+    <None Remove="OpenLibrary\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Doi\" />
-    <Folder Include="GoogleBook\" />
-    <Folder Include="OpenLibrary\" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
+    <PackageReference Include="System.Net.Http" Version="4.3.1" />
   </ItemGroup>
   <Import Project="..\CiteThisShit.Data\CiteThisShit.Data.projitems" Label="Shared" Condition="Exists('..\CiteThisShit.Data\CiteThisShit.Data.projitems')" />
 </Project>
