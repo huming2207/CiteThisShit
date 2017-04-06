@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CiteThisShit.Data", "CiteThisShit.Data\CiteThisShit.Data.shproj", "{CB814C76-BA78-4F99-827C-941842FCA652}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CiteThisShit.NetStandard", "CiteThisShit.NetStandard\CiteThisShit.NetStandard.csproj", "{D1D4E881-B881-4457-BFD3-3B3433F48C7D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CiteThisShit.NetStandard", "CiteThisShit.NetStandard\CiteThisShit.NetStandard.csproj", "{D1D4E881-B881-4457-BFD3-3B3433F48C7D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CiteThisShit.Desktop", "CiteThisShit.Desktop\CiteThisShit.Desktop.csproj", "{03CEF9AB-B0CE-46D1-B1C3-55115A153C39}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CiteThisShit.Uwp", "CiteThisShit.Uwp\CiteThisShit.Uwp.csproj", "{A6BB219F-9B76-45E4-B43F-B2B8D714C2FE}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CiteThisShit.Data", "CiteThisShit.Data\CiteThisShit.Data.shproj", "{1BAFFA03-CA42-4C1C-B3D8-564F6536BF09}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution

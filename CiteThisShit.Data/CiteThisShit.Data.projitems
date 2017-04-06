@@ -1,16 +1,21 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
     <HasSharedItems>true</HasSharedItems>
-    <SharedGUID>cb814c76-ba78-4f99-827c-941842fca652</SharedGUID>
+    <SharedGUID>{1BAFFA03-CA42-4C1C-B3D8-564F6536BF09}</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
     <Import_RootNamespace>CiteThisShit.Data</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)GoogleBook\GoogleBookResult.cs" />
+    <Folder Include="$(MSBuildThisFileDirectory)Doi\" />
+    <Folder Include="$(MSBuildThisFileDirectory)GoogleBook\" />
+    <Folder Include="$(MSBuildThisFileDirectory)OpenLibrary\" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Doi\DoiResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GoogleBook\GoogleBookResult.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OpenLibrary\OpenLibraryResult.cs" />
   </ItemGroup>
 </Project>
