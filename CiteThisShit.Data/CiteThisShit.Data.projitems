@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
@@ -9,12 +9,12 @@
     <Import_RootNamespace>CiteThisShit.Data</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Doi\" />
+    <Folder Include="$(MSBuildThisFileDirectory)CrossRef\" />
     <Folder Include="$(MSBuildThisFileDirectory)GoogleBook\" />
     <Folder Include="$(MSBuildThisFileDirectory)OpenLibrary\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Doi\DoiResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossRef\CrossrefResult.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GoogleBook\GoogleBookResult.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OpenLibrary\OpenLibraryResult.cs" />
   </ItemGroup>

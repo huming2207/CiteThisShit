@@ -29,12 +29,17 @@ namespace CiteThisShit.NetStandard
             return jsonObject;
         }
 
-		public async Task<Data.Doi.DoiResult> QueryDoiResult(string doiString)
+		public async Task<Data.Crossref.CrossrefResult> QueryDoiResult(string doiString)
         {
-            return await _GetDataAsync<Data.Doi.DoiResult>("http://api.crossref.org", string.Format("/works/{0}", doiString));
+            return await _GetDataAsync<Data.Crossref.CrossrefResult>("http://api.crossref.org", string.Format("/works/{0}", doiString));
         }
 
-		public async Task<Data.GoogleBook.GoogleBookResult> QueryGoogleIsbnResult(string isbnString)
+        public async Task<Data.Crossref.CrossrefResult> QueryIssnResult(string issnString)
+        {
+            return await _GetDataAsync<Data.Crossref.CrossrefResult>("http://api.crossref.org", string.Format("/journals/{0}/works", issnString));
+        }
+
+        public async Task<Data.GoogleBook.GoogleBookResult> QueryGoogleIsbnResult(string isbnString)
         {
             string queryPath = string.Format("/books/v1/volumes?q=isbn:{0}", isbnString);
             return await _GetDataAsync<Data.GoogleBook.GoogleBookResult>("https://www.googleapis.com", queryPath);
